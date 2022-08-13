@@ -12985,13 +12985,13 @@ const customAnswerText = document.querySelector(".custom-answer");
 
 function getTodayAnswer() {
   todayAnswerText.textContent = `Today's Wordle answer is: ${
-    answers[startingIndex + dateDifference]
+    answers[startingIndex - dateDifference]
   }`;
 }
 
 function getCustomAnswer() {
   let customDate = new Date(customDateInput.value.replace(/-/g, "/"));
-  let answer = answers[startingIndex + (date.getDate() - customDate.getDate())];
+  let answer = answers[startingIndex - (date.getDate() - customDate.getDate())];
   if (answer === undefined) {
     answer = "ERROR. PLEASE ENTER A DATE!";
     customAnswerText.textContent = `${answer}`;
