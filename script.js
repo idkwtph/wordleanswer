@@ -12985,7 +12985,10 @@ const currentDate = new Date();
 
 const startingIndex = 420;
 
-const dateDifference = date.getDate() - currentDate.getDate();
+const dateDifferenceInMilliseconds = date.getTime() - currentDate.getTime();
+
+const dateDifference =
+  Math.ceil(dateDifferenceInMilliseconds / (1000 * 3600 * 24)) + 1;
 
 const customDateInput = document.querySelector('input[type="date"]');
 
@@ -13010,7 +13013,7 @@ let hints = true;
 let settings = "closed";
 
 function getTodayAnswer() {
-  let answer = answers[startingIndex - dateDifference];
+  let answer = answers[startingIndex + Math.abs(dateDifference)];
   if (alerts) {
     alert(
       "WARNING! If you hate spoilers and do not want to see today's Wordle, EXIT this page NOW!"
