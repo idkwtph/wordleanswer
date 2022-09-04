@@ -12,6 +12,8 @@ Finds the Wordle answer for the current date or a custom date.
 
 - 1.3 - More bug fixes! (Fixing custom date answer and hints)
 
+- 1.4 - Added a favicon to the website
+
 # Links:
 
 - I have used Visual Studio Code to code the project. Download it here:
