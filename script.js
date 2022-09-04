@@ -13013,7 +13013,7 @@ let hints = localStorage.getItem("hints") === "true";
 let settings = "closed";
 
 function getTodayAnswer() {
-  let answer = answers[startingIndex + Math.abs(dateDifference)];
+  let answer = answers[startingIndex + Math.abs(dateDifference) + 1];
   if (alerts) {
     alert(
       "WARNING! If you hate spoilers and do not want to see today's Wordle, EXIT this page NOW!"
