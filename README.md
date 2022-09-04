@@ -25,6 +25,6 @@ Finds the Wordle answer for the current date or a custom date.
 
 The website for this repository is here:
   - https://idkwtph.github.io/wordleanswer
-  - 
+  
 Have Fun!
 
