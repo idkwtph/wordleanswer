@@ -13037,7 +13037,11 @@ function getTodayAnswer() {
 
 function getCustomAnswer() {
   let customDate = new Date(customDateInput.value.replace(/-/g, "/"));
-  let answer = answers[startingIndex - (date.getDate() - customDate.getDate())];
+  let answer =
+    answers[
+      startingIndex +
+        Math.abs((date.getTime() - customDate.getTime()) / (1000 * 3600 * 24))
+    ];
   if (answer === undefined) {
     answer = "ERROR. PLEASE ENTER A DATE!";
     customAnswerText.textContent = `${answer}`;
@@ -13068,9 +13072,12 @@ function nextHintCustom() {
   if (customCount > 4) return;
   ++customCount;
   let answer = answers[
-    startingIndex -
-      (date.getDate() -
-        new Date(customDateInput.value.replace(/-/g, "/")).getDate())
+    startingIndex +
+      Math.abs(
+        (date.getTime() -
+          new Date(customDateInput.value.replace(/-/g, "/")).getTime()) /
+          (1000 * 3600 * 24)
+      )
   ].charAt(customCount - 1);
   customHint += answer;
   if (customCount > 4) {
@@ -13085,7 +13092,9 @@ function nextHintCustom() {
 function nextHintToday() {
   if (todayCount > 4) return;
   ++todayCount;
-  let answer = answers[startingIndex - dateDifference].charAt(todayCount - 1);
+  let answer = answers[startingIndex + Math.abs(dateDifference) + 1].charAt(
+    todayCount - 1
+  );
   todayHint += answer;
   if (todayCount > 4) {
     todayAnswerText.textContent = `Today's Wordle answer is: ${todayHint}`;
