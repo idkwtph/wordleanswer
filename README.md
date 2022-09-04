@@ -10,6 +10,8 @@ Finds the Wordle answer for the current date or a custom date.
 
 - 1.2 - Used Local Storage to save your settings on my website
 
+- 1.3 - More bug fixes! (Fixing custom date answer and hints)
+
 # Links:
 
 - I have used Visual Studio Code to code the project. Download it here:
